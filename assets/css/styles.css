@@ -1,0 +1,110 @@
+@font-face {
+    font-family: 'StarJedi';
+    src: url('../fonts/Starjedi.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+body, html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #000;
+    overflow: hidden;
+    font-family: 'StarJedi', Arial, sans-serif;
+}
+
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    animation: stars 30s linear infinite;
+    background-image: 
+        radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 90px 40px, #fff, rgba(0,0,0,0));
+    background-repeat: repeat;
+    background-size: 200px 200px;
+}
+
+.intro-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #4bd5ee;
+    font-size: 36px;
+    text-align: center;
+    opacity: 0;
+    animation: fadeInOut 5s ease-in-out;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.crawl-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    transform-origin: 50% 100%;
+    transform: perspective(300px) rotateX(20deg);
+}
+
+.crawl {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    transform-origin: 50% 100%;
+    animation: crawl 15s linear;
+    animation-delay: 5s;
+}
+
+.crawl-content {
+    color: #feda4a;
+    font-size: 24px;
+    line-height: 1.3em;
+    text-align: justify;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.crawl-content h1 {
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 0.3em;
+}
+
+.coming-soon {
+    position: fixed;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #4bd5ee;
+    font-size: 48px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0; }
+    20%, 80% { opacity: 1; }
+}
+
+@keyframes crawl {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-120%); }
+}
+
+@keyframes stars {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 -2000px; }
+}
